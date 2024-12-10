@@ -1,20 +1,22 @@
-modele: modele
+modele: modele.cpp
 	clang++ $(CPPFLAGS) -c modele.cpp
 
-modele_test: modele_test
+modele_test: modele_test.cpp
 	clang++ $(CPPFLAGS) -c modele_test.cpp
 
-2048: 2048
+2048: 2048.cpp
 	clang++ $(CPPFLAGS) -c 2048.cpp
 
-test: modele_test
+test: modele.o modele_test.o
 	clang++ $(CPPFLAGS) $(LDFLAGS) modele.o modele_test.o -lncurses -o test
 
-jeu: jeu
+jeu: modele.o 2048.o
 	clang++ $(CPPFLAGS) $(LDFLAGS) modele.o 2048.o -lncurses -o jeu
 
 clear:
 	rm 2048.o
-	rm jeu
 	rm modele_test.o
 	rm modele.o
+	rm jeu
+	rm test
+
