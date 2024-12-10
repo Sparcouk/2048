@@ -102,6 +102,10 @@ Vous pourrez alors lancer le jeu depuis un terminal avec :
 
 +++
 
+```{code-cell} ipython3
+./test
+```
+
 ## Organisation du travail
 
 Le projet à dû prendre en tout une trentaine d'heure pour être finalisé, les différentes tâches a réaliser ont été séparées entre les deux membres du binôme
