@@ -26,6 +26,7 @@ void paire_couleurs();
 /** génère deux nombres sur des cases aléatoires d'un plateau vide
  *  @return un plateau en début de jeu
  *  Auteurs : Julien WENG & Léandre LEMOINE
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
 Plateau plateauInitial();
 
@@ -51,13 +52,15 @@ PlateauJeu genereTuile(PlateauJeu jeu);
    *@param m un entier avec m < n
    *@param n un entier avec n > m
    *@return un nombre entier entre m et n
-   *Auteurs : Julien WENG & Léandre LEMOINE
+   *Fonction créée à l'aide d'internet   
 **/
 int random(int m,int n);
 
 
 /**Affiche le plateau
   *@param un PlateauJeu plateau
+  *Auteur : Julien WENG
+  * Degré de confiance : 100%, affiche bien le Plateau pour faire les tests
 **/
 void afficher(PlateauJeu plateau);
 
@@ -66,6 +69,7 @@ void afficher(PlateauJeu plateau);
  *  @param PlateauJeu jeu
  *  @return 2 ou 4
  *  Auteurs : Julien WENG & Léandre LEMOINE
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
 int tireDeuxOuQuatre(PlateauJeu jeu);
 
@@ -73,6 +77,7 @@ int tireDeuxOuQuatre(PlateauJeu jeu);
 /** génère un plateau de dimensions 4*4 ne contenant que des 0
  *  @return un plateau vide
  *  Auteurs : Julien WENG & Léandre LEMOINE
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
 Plateau plateauVide();
 
@@ -81,6 +86,7 @@ Plateau plateauVide();
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers la gauche
  *  Auteur : Julien WENG
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
 PlateauJeu deplacementGauche(PlateauJeu jeu);
 
@@ -89,6 +95,7 @@ PlateauJeu deplacementGauche(PlateauJeu jeu);
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers la droite
  *  Auteur : Julien WENG
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
 PlateauJeu deplacementDroite(PlateauJeu jeu);
 
@@ -113,6 +120,7 @@ PlateauJeu deplacementBas(PlateauJeu plateau);
  *  @param direction la direction
  *  @return le plateau déplacé dans la direction
  *  Auteur : Julien WENG
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et marche très bien lors du jeu.
  **/
 PlateauJeu deplacement(PlateauJeu jeu, int direction);
 
@@ -120,6 +128,7 @@ PlateauJeu deplacement(PlateauJeu jeu, int direction);
 /** affiche un plateau
  * @param PlateauJeu p structure
  * Auteurs : Julien WENG & Léandre LEMOINE
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction dessine bien avec toutes les couleurs dans le jeu.
  **/
 void dessine(PlateauJeu p);
 
@@ -128,6 +137,7 @@ void dessine(PlateauJeu p);
  *  @param PlateauJeu plateau structure
  *  @return true si le plateau est vide, false sinon
  *  Auteur : Julien WENG
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
 bool estTerminé(PlateauJeu plateau);
     
@@ -136,5 +146,6 @@ bool estTerminé(PlateauJeu plateau);
  * @param @param PlateauJeu plateau structure
  * @return true si le plateau contient un 2048, false sinon
  * Auteurs : Julien WENG & Léandre LEMOINE
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
 bool estGagnant(PlateauJeu plateau);
