@@ -22,7 +22,7 @@ void test1(){
 	            {0,0,0,2},
 	            {0,0,0,2},
 	            {0,0,0,2}};
-	CHECK( deplacementDroite(jeu).plateau == jeu.test );
+	CHECK(deplacementDroite(jeu).plateau == jeu.test);
 
 	//Teste déplacementGauche
 	jeu.plateau = {{2,0,0,0},
@@ -34,7 +34,7 @@ void test1(){
 	            {2,0,0,0},
 	            {2,0,0,0}};
 
-	CHECK( deplacementGauche(jeu).plateau == jeu.test );
+	CHECK(deplacementGauche(jeu).plateau == jeu.test);
 
 	//Teste déplacementHaut
 	jeu.plateau = {{2,0,0,0},
@@ -46,7 +46,7 @@ void test1(){
 	            {0,0,0,0},
 	            {0,0,0,0}};
 
-	CHECK( deplacementHaut(jeu).plateau == jeu.test );
+	CHECK(deplacementHaut(jeu).plateau == jeu.test);
 
 	//Teste déplacementBas
 	jeu.plateau = {{2,0,0,0},
@@ -58,8 +58,27 @@ void test1(){
 	            {0,0,0,0},
 	            {2,2,2,2}};
 
-	CHECK( deplacementBas(jeu).plateau == jeu.test );
+	CHECK(deplacementBas(jeu).plateau == jeu.test);
 
+	//Teste PlateauVide
+	Plateau test1 = {{0,0,0,0},
+					 {0,0,0,0},
+					 {0,0,0,0},
+					 {0,0,0,0}};
+	CHECK(plateauVide() == test1);
+
+	//Teste estTerminé
+	jeu.plateau = {{2,4,8,16},
+					 {4,2,4,8},
+					 {8,4,2,4},
+					 {16,8,4,2}};
+	CHECK(estTerminé(jeu) == true);
+	
+	jeu.plateau = {{2,4,8,16},
+					 {2,2,4,8},
+					 {8,4,2,4},
+					 {16,8,4,2}};
+	CHECK(estTerminé(jeu) == false);
 }
 
 
