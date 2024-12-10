@@ -12,22 +12,36 @@ int main(){
     int deplacer;
     initscr();
     start_color();
+    paire_couleurs();
     keypad(stdscr,TRUE);
     
     while (estTerminé(etat) == false){
         
-        clear();
-        printw("Votre score est de %d\n", etat.score);
+        clear(); 
+        printw("Votre score est de %d\n", 52);
         dessine(etat);
-        
         refresh();
         deplacer = getch();
         etat = deplacement(etat, deplacer);
+        afficher(etat);
         
     }
-    
+    clear();
+    printw("La partie est terminée !\n");
+    printw("Score final :%d\n", etat.score);
+    if(estGagnant(etat) == true){
+            printw("Félicitation vous avez fait une case valant 2048 ou plus au cours de la partie !\n");
+    }
+	int touche;
+    printw("Appuyez sur la touche entrée pour quitter le jeu.\n");
+	touche = getch();
+	if( touche == KEY_ENTER){
+	dessine(etat);
+    refresh();
+    getch();
     endwin();
-    
+	}
+	endwin();
     return 0;
     
 }
