@@ -5,39 +5,41 @@
 using namespace std;
 
 using Plateau = vector<vector<int>>;
+// Vous pouvez ajouter des fonctions à ce fichier si besoin est
 
-
+/** Attribue a une tuile une couleur en fonction de sa valeur
+*@param int la valeur de la tuile
+*@return la puissance de deux auxquel elle correspond (jusqu'a un max de 2048 ie 2^11)
+**/
 int couleur_tuile(int valeur);
 
+
+/** Définie les paires de couleurs à utiliser en fonction de la k-ème puissance de 2 de la tuile
+**/
 void paire_couleurs();
 
 
 /** génère deux nombres sur des cases aléatoires d'un plateau vide
  *  @return un plateau en début de jeu
  **/
-
 Plateau plateauInitial();
 
 
 struct PlateauJeu{
 
     int score = 0;
-    Plateau plateau;
+    Plateau plateau = plateauInitial();
+	Plateau test;
 
-    PlateauJeu()  { //Initialisation / Constructeur
-        plateau = plateauInitial();
-        int sum = 0;
-        for(int i = 0; i<4;i++){
-            for(int j = 0; j<4; j++){
-                sum += plateau[i][j];
-            }
-        }
-        score = sum;
-    }
-    ~PlateauJeu() = default; //destructeur
+	
 };
 
-// Vous pouvez ajouter des fonctions à ce fichier si besoin est
+/**génère une nouvelle tuile valant 2 ou 4 sur une tuile vide après chaque déplacement
+*@param plateau le plateau de jeu
+*@return le plateau de jeu avec la tuile ajoutée
+**/
+PlateauJeu genereTuile(PlateauJeu jeu);
+
 
 /** génère un nombre aléatoire entre m et n
    *@param m un entier avec m < n
@@ -70,28 +72,27 @@ Plateau plateauVide();
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers la gauche
  **/
-PlateauJeu déplacementGauche(PlateauJeu jeu);
+PlateauJeu deplacementGauche(PlateauJeu jeu);
 
 
 /** déplace les tuiles d'un plateau vers la droite et les combine si possible
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers la droite
  **/
-PlateauJeu déplacementDroite(PlateauJeu jeu);
-
+PlateauJeu deplacementDroite(PlateauJeu jeu);
 
 /** déplace les tuiles d'un plateau vers le haut et les combine si possible
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers le haut
  **/
-PlateauJeu déplacementHaut(PlateauJeu jeu);
+PlateauJeu deplacementHaut(PlateauJeu jeu);
 
 
 /** déplace les tuiles d'un plateau vers le bas et les combine si possible
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers le bas
  **/
-PlateauJeu déplacementBas(PlateauJeu plateau);
+PlateauJeu deplacementBas(PlateauJeu plateau);
 
 
 /** déplace les tuiles d'un plateau dans la direction donnée et génère une nouvelle tuile si le déplacement est valide
