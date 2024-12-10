@@ -10,11 +10,11 @@ modele_test: modele_test
 test: modele_test
 	clang++ $(CPPFLAGS) $(LDFLAGS) modele.o modele_test.o -lncurses -o test
 
-jeu: 2048
-	clang++ $(CPPFLAGS) $(LDFLAGS) modele.o 2048.o -lncurses -o 2048
+jeu: jeu
+	clang++ $(CPPFLAGS) $(LDFLAGS) modele.o 2048.o -lncurses -o jeu
 
 clear:
 	rm 2048.o
-	rm test
+	rm jeu
 	rm modele_test.o
 	rm modele.o
