@@ -8,18 +8,35 @@ using namespace std;
 
 
 void paire_couleurs(){
-    init_pair(0, COLOR_BLACK, COLOR_WHITE);   //Couleur pour 0
-    init_pair(2, COLOR_BLACK, COLOR_WHITE);    // Couleur pour 2
-    init_pair(4, COLOR_BLACK, COLOR_YELLOW);  // Couleur pour 4
-    init_pair(8, COLOR_BLACK, COLOR_GREEN);   // Couleur pour 8
-    init_pair(16, COLOR_BLACK, COLOR_CYAN);    // Couleur pour 16
-    init_pair(32, COLOR_BLACK, COLOR_BLUE);    // Couleur pour 32
-    init_pair(64, COLOR_BLACK, COLOR_MAGENTA); // Couleur pour 64
-    init_pair(128, COLOR_WHITE, COLOR_RED);     // Couleur pour 128
-    init_pair(256, COLOR_WHITE, COLOR_YELLOW);  // Couleur pour 256
-    init_pair(512, COLOR_WHITE, COLOR_GREEN);   // Couleur pour 512
-    init_pair(1024, COLOR_WHITE, COLOR_CYAN);   // Couleur pour 1024
-    init_pair(2048, COLOR_WHITE, COLOR_BLUE);   // Couleur pour 2048
+    //Associe a chaque valeur corresepondant aux puissances de 2 de la tuile un couple de couleurs.
+    init_pair(0, COLOR_BLACK, COLOR_WHITE);    // Couleur pour 0
+    init_pair(1, COLOR_BLACK, COLOR_WHITE);    // Couleur pour 2
+    init_pair(2, COLOR_BLACK, COLOR_YELLOW);  // Couleur pour 4
+    init_pair(3, COLOR_BLACK, COLOR_GREEN);   // Couleur pour 8
+    init_pair(4, COLOR_BLACK, COLOR_CYAN);    // Couleur pour 16
+    init_pair(5, COLOR_BLACK, COLOR_BLUE);    // Couleur pour 32
+    init_pair(6, COLOR_BLACK, COLOR_MAGENTA); // Couleur pour 64
+    init_pair(7, COLOR_WHITE, COLOR_RED);     // Couleur pour 128
+    init_pair(8, COLOR_WHITE, COLOR_YELLOW);  // Couleur pour 256
+    init_pair(9, COLOR_WHITE, COLOR_GREEN);   // Couleur pour 512
+    init_pair(10, COLOR_WHITE, COLOR_CYAN);   // Couleur pour 1024
+    init_pair(11, COLOR_WHITE, COLOR_BLUE);   // Couleur pour 2048 et plus
+}
+
+int couleur_tuile(int valeur) {
+    //renvoie la valeur de la puissance k-eme de 2 de la tuile du plateua jusqu'a 2048 (ie 2^11)
+    if (valeur == 2) return 1;
+    else if (valeur == 4) return 2;
+    else if (valeur == 8) return 3;
+    else if (valeur == 16) return 4;
+    else if (valeur == 32) return 5;
+    else if (valeur == 64) return 6;
+    else if (valeur == 128) return 7;
+    else if (valeur == 256) return 8;
+    else if (valeur == 512) return 9;
+    else if (valeur == 1024) return 10;
+    else if (valeur >= 2048) return 11;
+    else return 0;
 }
 
 int tireDeuxOuQuatre(){
@@ -310,26 +327,27 @@ void dessine(PlateauJeu p){
         printw("*"); 
         for(int j = 0; j<4; j++){
             int valeur = p.plateau[i][j];
+            int paire = couleur_tuile(valeur);
             nombreDeChiffres = to_string(p.plateau[i][j]).size();      //nombreDeChiffres contient le nombre de chiffres dans le nombre à la ligne i et la colonne j
-                attron(COLOR_PAIR(valeur));     
+                attron(COLOR_PAIR(paire));     
                 if(nombreDeChiffres == 1){
                     printw("  %d  ", valeur);
-                    attroff(COLOR_PAIR(valeur));
+                    attroff(COLOR_PAIR(paire));
                      printw("*");
                 }
                 else if(nombreDeChiffres == 2){
                     printw(" %d  ", valeur);
-                    attroff(COLOR_PAIR(valeur));
+                    attroff(COLOR_PAIR(paire));
                     printw("*");
                 }
                 else if(nombreDeChiffres == 3){
                     printw(" %d ", valeur);
-                    attroff(COLOR_PAIR(valeur));
+                    attroff(COLOR_PAIR(paire));
                     printw("*");
                 }
                 else{
                     printw(" %d ", valeur);
-                    attroff(COLOR_PAIR(valeur));
+                    attroff(COLOR_PAIR(paire));
                     printw("*");
                 }
         
