@@ -96,13 +96,13 @@ Pour compiler le projet, vous pouvez exécuter la commande suivante :
 
 Vous pourrez alors lancer le jeu depuis un terminal avec :
 
-```{code-cell} ipython3
++++
 ./jeu
-```
++++
 
-```{code-cell} ipython3
++++
 ./test
-```
++++
 
 ## Organisation du travail
 
