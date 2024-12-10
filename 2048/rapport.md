@@ -97,13 +97,14 @@ Pour compiler le projet, vous pouvez exécuter la commande suivante :
 Vous pourrez alors lancer le jeu depuis un terminal avec :
 
 +++
+
 ./jeu
-+++
 
 +++
+
 ./test
-+++
 
++++
 ## Organisation du travail
 
 Le projet à dû prendre en tout une trentaine d'heure pour être finalisé, les différentes tâches a réaliser ont été séparées entre les deux membres du binôme
