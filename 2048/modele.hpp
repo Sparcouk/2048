@@ -66,12 +66,11 @@ void afficher(PlateauJeu plateau);
 
 
 /** génère aléatoirement un 2 ou un 4 avec des probabilités respectives de 9/10 et 1/10
- *  @param PlateauJeu jeu
  *  @return 2 ou 4
  *  Auteurs : Julien WENG & Léandre LEMOINE
  *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
  **/
-int tireDeuxOuQuatre(PlateauJeu jeu);
+int tireDeuxOuQuatre();
 
 
 /** génère un plateau de dimensions 4*4 ne contenant que des 0
