@@ -26,24 +26,24 @@ void paire_couleurs();
 /** génère deux nombres sur des cases aléatoires d'un plateau vide
  *  @return un plateau en début de jeu
  *  Auteurs : Julien WENG & Léandre LEMOINE
- *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée.
  **/
 Plateau plateauInitial();
 
-//Initialise une structure associant le plateau de jeu et son score, le Plateau test permet d'effectuer les tests
+//Initialise une structure associant le plateau de jeu et son score, le Plateau test permet d'effectuer les tests.
 struct PlateauJeu{
 
     int score = 0;
     Plateau plateau = plateauInitial();
 	Plateau test;
 
-	
 };
 
 /**génère une nouvelle tuile valant 2 ou 4 sur une tuile vide après chaque déplacement
 *@param plateau le plateau de jeu
 *@return le plateau de jeu avec la tuile ajoutée
 *Auteur : Julien WENG
+*Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée.
 **/
 PlateauJeu genereTuile(PlateauJeu jeu);
 
@@ -52,7 +52,7 @@ PlateauJeu genereTuile(PlateauJeu jeu);
    *@param m un entier avec m < n
    *@param n un entier avec n > m
    *@return un nombre entier entre m et n
-   *Fonction créée à l'aide d'internet   
+   *Fonction créée à l'aide d'internet.
 **/
 int random(int m,int n);
 
@@ -60,7 +60,7 @@ int random(int m,int n);
 /**Affiche le plateau
   *@param un PlateauJeu plateau
   *Auteur : Julien WENG
-  * Degré de confiance : 100%, affiche bien le Plateau pour faire les tests
+  * Degré de confiance : 100%, affiche bien le Plateau pour faire des tests.
 **/
 void afficher(PlateauJeu plateau);
 
@@ -68,7 +68,7 @@ void afficher(PlateauJeu plateau);
 /** génère aléatoirement un 2 ou un 4 avec des probabilités respectives de 9/10 et 1/10
  *  @return 2 ou 4
  *  Auteurs : Julien WENG & Léandre LEMOINE
- *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée.
  **/
 int tireDeuxOuQuatre();
 
@@ -85,7 +85,7 @@ Plateau plateauVide();
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers la gauche
  *  Auteur : Julien WENG
- *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée.
  **/
 PlateauJeu deplacementGauche(PlateauJeu jeu);
 
@@ -94,7 +94,7 @@ PlateauJeu deplacementGauche(PlateauJeu jeu);
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers la droite
  *  Auteur : Julien WENG
- *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée.
  **/
 PlateauJeu deplacementDroite(PlateauJeu jeu);
 
@@ -136,7 +136,7 @@ void dessine(PlateauJeu p);
  *  @param PlateauJeu plateau structure
  *  @return true si le plateau est vide, false sinon
  *  Auteur : Julien WENG
- *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée.
  **/
 bool estTerminé(PlateauJeu plateau);
     
@@ -145,6 +145,6 @@ bool estTerminé(PlateauJeu plateau);
  * @param @param PlateauJeu plateau structure
  * @return true si le plateau contient un 2048, false sinon
  * Auteurs : Julien WENG & Léandre LEMOINE
- *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée
+ *  Degré de confiance : 100%, aucun problème au niveau de l'implémentation et la fonction est testée.
  **/
 bool estGagnant(PlateauJeu plateau);
