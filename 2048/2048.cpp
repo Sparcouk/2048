@@ -18,7 +18,7 @@ int main(){
     while (estTerminé(etat) == false){
         
         clear(); 
-        printw("Votre score est de %d\n", 52);
+        printw("Votre score est de %d\n", etat.score);
         dessine(etat);
         refresh();
         deplacer = getch();
