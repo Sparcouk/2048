@@ -32,14 +32,14 @@ int main(){
     if(estGagnant(etat) == true){
             printw("Félicitation vous avez fait une case valant 2048 ou plus au cours de la partie !\n");
     }
-	int touche;
-    printw("Appuyez sur la touche entrée pour quitter le jeu.\n");
-	touche = getch();
-	if( touche == KEY_ENTER){
+	int touche = 0;
+    printw("Appuyez sur la touche retour arrière (<-) pour quitter le jeu.\n");
 	dessine(etat);
-    refresh();
-    getch();
-    endwin();
+	while(touche != KEY_BACKSPACE){
+	touche = getch();
+		if( touche == KEY_BACKSPACE){
+	    		endwin();
+		}
 	}
 	endwin();
     return 0;
