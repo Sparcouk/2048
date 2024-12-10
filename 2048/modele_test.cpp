@@ -13,61 +13,75 @@ using Plateau = vector<vector<int>>;
 
 void test1(){
 	PlateauJeu jeu;
-		//Teste déplacementDroite
-	jeu.plateau = {{2,0,0,0},
-	              {0,2,0,0},
+
+	
+		//Test déplacementDroite
+	jeu.plateau = {{2,2,2,0},
+	              {0,2,16,0},
 	              {0,0,2,0},
 	              {0,0,0,2}};
-	jeu.test = {{0,0,0,2},
-	            {0,0,0,2},
+	jeu.test = {{0,0,2,4},
+	            {0,0,2,16},
 	            {0,0,0,2},
 	            {0,0,0,2}};
 	CHECK(deplacementDroite(jeu).plateau == jeu.test);
 
-	//Teste déplacementGauche
-	jeu.plateau = {{2,0,0,0},
-	              {0,2,0,0},
+
+	
+	//Test déplacementGauche
+	jeu.plateau = {{2,2,2,0},
+	              {0,2,16,0},
 	              {0,0,2,0},
 	              {0,0,0,2}};
-	jeu.test = {{2,0,0,0},
-	            {2,0,0,0},
+	jeu.test = {{4,2,0,0},
+	            {2,16,0,0},
 	            {2,0,0,0},
 	            {2,0,0,0}};
 
 	CHECK(deplacementGauche(jeu).plateau == jeu.test);
 
-	//Teste déplacementHaut
-	jeu.plateau = {{2,0,0,0},
-				  {0,2,0,0},
-				  {0,0,2,0},
+
+	
+	//Test déplacementHaut
+	jeu.plateau = {{2,2,0,0},
+				  {0,2,16,0},
+				  {0,4,2,2},
 				  {0,0,0,2}};
-	jeu.test = {{2,2,2,2},
-	            {0,0,0,0},
+	jeu.test = {{2,4,16,4},
+	            {0,4,2,0},
 	            {0,0,0,0},
 	            {0,0,0,0}};
 
 	CHECK(deplacementHaut(jeu).plateau == jeu.test);
 
-	//Teste déplacementBas
-	jeu.plateau = {{2,0,0,0},
-				  {0,2,0,0},
+
+	
+	//Test déplacementBas
+	jeu.plateau = {{2,16,0,8},
+				  {2,2,2,0},
 				  {0,0,2,0},
-				  {0,0,0,2}};
+				  {0,0,2,2}};
 	jeu.test = {{0,0,0,0},
 	            {0,0,0,0},
-	            {0,0,0,0},
-	            {2,2,2,2}};
+	            {0,16,2,8},
+	            {4,2,4,2}};
 
 	CHECK(deplacementBas(jeu).plateau == jeu.test);
 
-	//Teste PlateauVide
+
+	
+	//Test PlateauVide
 	Plateau test1 = {{0,0,0,0},
 					 {0,0,0,0},
 					 {0,0,0,0},
 					 {0,0,0,0}};
 	CHECK(plateauVide() == test1);
 
-	//Teste estTerminé
+
+
+
+	
+	//Test estTerminé
 	jeu.plateau = {{2,4,8,16},
 					 {4,2,4,8},
 					 {8,4,2,4},
@@ -79,6 +93,77 @@ void test1(){
 					 {8,4,2,4},
 					 {16,8,4,2}};
 	CHECK(estTerminé(jeu) == false);
+
+
+
+
+
+
+	
+	//Test estGagnant
+		jeu.plateau = {{2,4,8,16},
+					   {2,2,4,8},
+					   {8,4,2,4},
+				   	   {16,8,4,2}};
+	CHECK(estGagnant(jeu) == false);
+
+			jeu.plateau = {{2,4,8,16},
+						   {2,2,4,8},
+						   {8,4,2,4},
+						   {16,8,4,2048}};
+	CHECK(estGagnant(jeu) == true);
+
+
+
+	
+	
+	//Test genereTuile et plateauInitial
+	cout << "************ début test genereTuile et plateauInitial  ************" << endl << endl;
+	
+	jeu.plateau = plateauInitial();
+	cout << "plateauInitial avant genereTuile :" << endl;
+	cout << endl;
+	afficher(jeu);
+	cout << "Plateau genereTuile : " << endl;
+	cout << endl;
+	jeu = genereTuile(jeu);
+	afficher(jeu);
+	
+	cout << "************ fin test genereTuile et plateauInitial ************" << endl << endl;
+	cout << endl;
+
+
+
+
+	
+	//Test random
+	cout << "************ début test random  ************" << endl << endl;
+
+	cout << " - tests entre 1 et 10 : " << endl << endl;
+
+	for(int i = 0; i<10; i++){
+		cout << random(1,10) << " ";
+	}
+	cout << endl << endl;
+	cout <<" - tests entre 0 et 3 " << endl << endl;
+	cout << endl;
+		for(int i = 0; i<10; i++){
+		cout << random(0,3) << " ";
+	}
+	cout << endl << endl;
+	cout << "************ fin test random ************" << endl << endl;
+
+
+
+	//Test tireDeuxOuQuatre
+	cout << "************ début test tireDeuxOuQuatre  ************" << endl << endl;
+
+	for(int i = 0; i<10; i++){
+		cout << tireDeuxOuQuatre() << " ";
+	}
+	cout << endl << endl;
+	cout << "************ fin test tireDeuxOuQuatre ************" << endl << endl;
+	
 }
 
 
