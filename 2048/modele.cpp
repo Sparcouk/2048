@@ -49,7 +49,6 @@ int tireDeuxOuQuatre(){
 }
 
 PlateauJeu genereTuile(PlateauJeu jeu){
-    afficher(jeu);
     for(int i = 0; i<4;i++){
         for(int j = 0; j<4; j++){
             //vérifie qu'il soit bien possible de générer une nouvelle tuile (si une case est libre pour accueillir une tuile)
