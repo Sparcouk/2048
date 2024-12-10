@@ -28,7 +28,7 @@ int main(){
     }
     clear();
     printw("La partie est terminée !\n");
-    printw("Score final :%d\n", etat.score);
+    printw("Score final : %d\n", etat.score);
     if(estGagnant(etat) == true){
             printw("Félicitation vous avez fait une case valant 2048 ou plus au cours de la partie !\n");
     }
