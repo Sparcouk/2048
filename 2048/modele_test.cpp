@@ -15,7 +15,7 @@ void test1(){
 	PlateauJeu jeu;
 
 	
-		//Test déplacementDroite
+	//Test déplacementDroite
 	jeu.plateau = {{2,2,2,0},
 	              {0,2,16,0},
 	              {0,0,2,0},
@@ -75,9 +75,8 @@ void test1(){
 					 {0,0,0,0},
 					 {0,0,0,0},
 					 {0,0,0,0}};
+	
 	CHECK(plateauVide() == test1);
-
-
 
 
 	
@@ -86,43 +85,42 @@ void test1(){
 					 {4,2,4,8},
 					 {8,4,2,4},
 					 {16,8,4,2}};
+	
 	CHECK(estTerminé(jeu) == true);
 	
 	jeu.plateau = {{2,4,8,16},
 					 {2,2,4,8},
 					 {8,4,2,4},
 					 {16,8,4,2}};
+	
 	CHECK(estTerminé(jeu) == false);
 
 
-
-
-
-
 	
-	//Test estGagnant
+	//Test estGagnant -----------------------------------------------------------------------------------------------------------------
 		jeu.plateau = {{2,4,8,16},
 					   {2,2,4,8},
 					   {8,4,2,4},
 				   	   {16,8,4,2}};
+	
 	CHECK(estGagnant(jeu) == false);
 
 			jeu.plateau = {{2,4,8,16},
 						   {2,2,4,8},
 						   {8,4,2,4},
 						   {16,8,4,2048}};
+	
 	CHECK(estGagnant(jeu) == true);
 
 
 
 	
-	
 	//Test genereTuile et plateauInitial
-	cout << "************ début test genereTuile et plateauInitial  ************" << endl << endl;
+	
+	cout << "************ début test generetuile et plateauInitial  ************" << endl << endl;
 	
 	jeu.plateau = plateauInitial();
-	cout << "plateauInitial avant genereTuile :" << endl;
-	cout << endl;
+	cout << "plateauInitial avant genereTuile :" << endl << endl;
 	afficher(jeu);
 	cout << "Plateau genereTuile : " << endl;
 	cout << endl;
@@ -131,8 +129,6 @@ void test1(){
 	
 	cout << "************ fin test genereTuile et plateauInitial ************" << endl << endl;
 	cout << endl;
-
-
 
 
 	
@@ -156,6 +152,7 @@ void test1(){
 
 
 	//Test tireDeuxOuQuatre
+	
 	cout << "************ début test tireDeuxOuQuatre  ************" << endl << endl;
 
 	for(int i = 0; i<10; i++){
@@ -167,12 +164,9 @@ void test1(){
 }
 
 
-
-
-
-
-
 int main(){
+	
 	test1();
+	
 	return 0;
 }
