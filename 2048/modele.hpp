@@ -53,6 +53,7 @@ PlateauJeu genereTuile(PlateauJeu jeu);
    *@param n un entier avec n > m
    *@return un nombre entier entre m et n
    *Fonction créée à l'aide d'internet.
+   *Degré de confiance : 95% la fonction est testée mais on ne sait pas exactement comment fonctionne le générateur de Mersen Twister
 **/
 int random(int m,int n);
 
