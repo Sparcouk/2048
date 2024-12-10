@@ -30,7 +30,7 @@ void paire_couleurs();
  **/
 Plateau plateauInitial();
 
-//Initialise une structure associant le plateau de jeu et son score;
+//Initialise une structure associant le plateau de jeu et son score, le Plateau test permet d'effectuer les tests
 struct PlateauJeu{
 
     int score = 0;
