@@ -14,9 +14,7 @@ jeu: modele.o 2048.o
 	clang++ $(CPPFLAGS) $(LDFLAGS) modele.o 2048.o -lncurses -o jeu
 
 clear:
-	rm 2048.o
-	rm modele_test.o
-	rm modele.o
+	rm *.o
 	rm jeu
 	rm test
 
