@@ -94,6 +94,10 @@ Pour compiler le projet, vous pouvez exécuter la commande suivante :
 !make test
 ```
 
+```{code-cell} ipython3
+!make clear
+```
+
 Vous pourrez alors lancer le jeu depuis un terminal avec :
 
 +++
