@@ -328,8 +328,13 @@ void dessine(PlateauJeu p){
             int valeur = p.plateau[i][j];
             int paire = couleur_tuile(valeur);
             nombreDeChiffres = to_string(p.plateau[i][j]).size();      //nombreDeChiffres contient le nombre de chiffres dans le nombre à la ligne i et la colonne j
-                attron(COLOR_PAIR(paire));     
-                if(nombreDeChiffres == 1){
+                attron(COLOR_PAIR(paire));
+                if(valeur == 0){
+                    printw("     ");
+                    attroff(COLOR_PAIR(paire));
+                    printw("*");
+                }
+                else if(nombreDeChiffres == 1){
                     printw("  %d  ", valeur);
                     attroff(COLOR_PAIR(paire));
                      printw("*");
