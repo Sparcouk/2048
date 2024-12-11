@@ -102,6 +102,8 @@ PlateauJeu deplacementDroite(PlateauJeu jeu);
 /** déplace les tuiles d'un plateau vers le haut et les combine si possible
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers le haut
+ *  Degré de confiance : 90%, aucun problème lors de l'implémentation et des tests mais il y a toujours un degré de doute à avoir,
+ *  nous n'avons pas pu tester tous les cas possibles.
  *  Auteur : Léandre LEMOINE
  **/
 PlateauJeu deplacementHaut(PlateauJeu jeu);
@@ -110,6 +112,8 @@ PlateauJeu deplacementHaut(PlateauJeu jeu);
 /** déplace les tuiles d'un plateau vers le bas et les combine si possible
  *  @param PlateauJeu jeu structure
  *  @return le plateau une fois déplacé vers le bas
+ *  Degré de confiance : 90%, aucun problème lors de l'implémentation et des tests mais il y a toujours un degré de doute à avoir,
+ *  nous n'avons pas pu tester tous les cas possibles.
  *  Auteur : Léandre LEMOINE
  **/
 PlateauJeu deplacementBas(PlateauJeu plateau);
